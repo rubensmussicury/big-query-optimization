@@ -72,12 +72,6 @@ Estimated cost is
 $0.006
 
 6 vezes para equivaler ao custo da transformação NESTED
-aa-jkla d--dsajlk
-
-dsalkdjlkjds
-fdsjflkdsafjdsa
-fadskl
-
 
 */
 
