@@ -74,6 +74,8 @@ $0.006
 6 vezes para equivaler ao custo da transformação NESTED
 
 mudei jskafjdçjdasç
+
+rubens rubens
 */
 
 
