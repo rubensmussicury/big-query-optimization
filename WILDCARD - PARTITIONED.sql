@@ -9,17 +9,17 @@ CÓDIGO NÃO OTIMIZADO
 SELECT
     max, ROUND((max-32)*5/9,1) celsius, mo, da, year
 FROM
-   (SELECT * FROM `bpd.noaa_gsod.gsod1930` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1931` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1932` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1933` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1934` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1935` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1936` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1937` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1938` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1939` UNION ALL
-    SELECT * FROM `bpd.noaa_gsod.gsod1940`)
+   (SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1930` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1931` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1932` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1933` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1934` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1935` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1936` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1937` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1938` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1939` UNION ALL
+    SELECT * FROM `bigquery-public-data.noaa_gsod.gsod1940`)
 WHERE
     da = "18" AND
     mo = "11" AND
@@ -27,6 +27,21 @@ WHERE
     max <> 9999.9
 ORDER BY
     max DESC
+
+
+/*
+Duração	
+1,9 s
+
+Bytes processados	
+9,22 MB
+
+Bytes faturados	
+110 MB
+
+Estimated Cost
+0.00005
+*/
 
 /*
 ---------------------------------------------------------------
@@ -38,7 +53,7 @@ CÓDIGO OTIMIZADO
 SELECT
     max, ROUND((max-32)*5/9,1) celsius, mo, da, year
 FROM
-    `bpd.noaa_gsod.gsod19*`
+    `bigquery-public-data.noaa_gsod.gsod19*`
 WHERE
     # Ao invés de 3 colunas de dia, mês e ano, 
     # criar uma de data e particionar a tabela.
@@ -50,5 +65,16 @@ WHERE
 ORDER BY
     max DESC
 
+/*
+Duration	
+0.6 sec (68% mais rápida)
+
+Bytes processed	
+12.57 MB (Curiosidade, ele processa mais bytes)
+
+Bytes billed	
+13 MB (88% mais barato)
+
+*/
 
 

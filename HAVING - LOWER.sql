@@ -9,7 +9,7 @@ CÓDIGO NÃO OTIMIZADO
 SELECT 
     value,
     year,
-    SAFE_COUNT(1) AS qtde
+    COUNT(1) AS qtde
 FROM 
     `bigquery-public-data.bls.wm`
 GROUP BY 
@@ -17,6 +17,22 @@ GROUP BY
 HAVING 
     LOWER(period) LIKE "%a%" AND
     value BETWEEN 10 AND 20
+
+/*
+Duração	
+0,7 s
+
+Bytes processados	
+9,38 MB
+
+Bytes faturados	
+10 MB
+
+Estimated Cost
+0.00005
+
+*/
+
 
 /*
 ---------------------------------------------------------------
@@ -35,3 +51,18 @@ WHERE
     value BETWEEN 10 AND 20
 GROUP BY 
     value, year, period
+
+/*
+Duração	
+0,5 s - 28% mais performance
+
+Bytes processados	
+9,38 MB
+
+Bytes faturados	
+10 MB
+
+Estimated Cost
+0.00005
+
+*/

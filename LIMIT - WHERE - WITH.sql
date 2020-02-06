@@ -36,6 +36,20 @@ _WM_3 AS (
 # está ok uma vez que em certeza do resultado
 SELECT * FROM _WM_3
 
+/*
+Duração	
+0,8 s
+
+Bytes processados	
+67,53 MB
+
+Bytes faturados	
+68 MB
+
+Estimated cost is 
+$0.0003
+*/
+
 
 /*
 ---------------------------------------------------------------
@@ -67,3 +81,17 @@ SELECT *
 FROM `bigquery-public-data.bls.temp_wm` 
 WHERE code_series_id = "WMU"
 LIMIT 1000
+
+/*
+Duração	
+0,6 s (25% mais rápida)
+
+Bytes processados	
+67,53 MB
+
+Bytes faturados	
+68 MB
+
+Estimated cost is 
+$0.0003
+*/
