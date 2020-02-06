@@ -26,7 +26,7 @@ Bytes processados
 Bytes faturados	
 72 MB
 
-Estimated Cost
+Custo estimado
 $0.0003
 */
 
@@ -57,7 +57,7 @@ Bytes processados
 Bytes faturados	
 72 MB
 
-Estimated Cost
+Custo estimado
 $0.0003
 */
 

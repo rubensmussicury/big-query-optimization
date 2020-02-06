@@ -28,7 +28,7 @@ Bytes processados
 Bytes faturados	
 10 MB
 
-Estimated Cost
+Custo estimado
 0.00005
 
 */
@@ -62,7 +62,6 @@ Bytes processados
 Bytes faturados	
 10 MB
 
-Estimated Cost
+Custo estimado
 0.00005
-
 */

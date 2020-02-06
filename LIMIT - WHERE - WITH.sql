@@ -46,7 +46,7 @@ Bytes processados
 Bytes faturados	
 68 MB
 
-Estimated cost is 
+Custo estimado
 $0.0003
 */
 

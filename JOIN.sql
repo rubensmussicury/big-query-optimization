@@ -20,19 +20,17 @@ ORDER BY number_of_commits DESC
 
 
 /*
-
-Duration	
+Duração	
 2.9 sec
 
-Bytes processed	
+Bytes processados	
 5.27 GB
 
-Bytes billed	
+Bytes faturados
 5.27 GB
 
-Custo Estimado
+Custo estimado
 $0.03
-
 */
 
 /*
@@ -57,17 +55,16 @@ ORDER BY number_of_commits DESC
 /*
 NÃO MUDOU NADA
 
-
-Duration	
+Duração	
 2.9 sec
 
-Bytes processed	
+Bytes processados	
 5.27 GB
 
-Bytes billed	
+Bytes faturados	
 5.27 GB
 
-Custo Estimado
+Custo estimado
 $0.03
 
 */

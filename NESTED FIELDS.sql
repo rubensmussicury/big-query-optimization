@@ -1,7 +1,7 @@
 # VSCode - Copyright © Rubens Mussi Cury 2020 All Rights Reserved
 
 # Transformando a tabela com Nested Fields.
-CREATE OR REPLACE TABLE `self-service-saude.SANDBOX_SUASA.epa` AS
+CREATE OR REPLACE TABLE `prj.dataset.epa` AS
 SELECT
     state_code,
     county_code,
@@ -31,18 +31,17 @@ GROUP BY state_code, county_code, site_num, parameter_code, poc, date_local
 
 /*
 
-Duration	
+Duração	
 1 min 7 sec
 
-Bytes processed	
+Bytes processados	
 8.76 GB
 
-Bytes billed	
+Bytes faturados
 8.76 GB
 
-Estimated cost is 
+Custo estimado
 $0.04
-
 */
 
 
@@ -58,17 +57,16 @@ WHERE
 GROUP BY pm10.county_name
 
 /*
-
-Duration	
+Duração	
 1.2 sec
 
-Bytes processed	
+Bytes processados	
 1.28 GB
 
-Bytes billed	
+Bytes faturado
 1.28 GB
 
-Estimated cost is 
+Custo estimado
 $0.006
 
 6 vezes para equivaler ao custo da transformação NESTED
@@ -80,24 +78,22 @@ SELECT
  pm10.county_name,
  COUNT(DISTINCT pm10.site_num) AS num_instruments
 FROM 
-  `self-service-saude.SANDBOX_SUASA.epa` as pm10
+  `prj.dataset.epa` as pm10
 WHERE 
   EXTRACT(YEAR from pm10.date_local) = 2017 AND
   pm10.state_name = 'Ohio'
 GROUP BY pm10.county_name
 
 /*
-
-Duration	
+Duração	
 0.5 sec
 
-Bytes processed	
+Bytes processados	
 55.78 MB
 
-Bytes billed	
+Bytes faturados	
 56 MB
 
-Estimated cost
+Custo estimado
 $0.0003
-
 */

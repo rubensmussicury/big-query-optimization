@@ -39,7 +39,7 @@ Bytes processados
 Bytes faturados	
 110 MB
 
-Estimated Cost
+Custo estimado
 0.00005
 */
 
@@ -57,7 +57,7 @@ FROM
 WHERE
     # Ao invés de 3 colunas de dia, mês e ano, 
     # criar uma de data e particionar a tabela.
-    _PARTITIONDATE = "1940-11-18" AND
+    COLUNA_DATA_PARTICIONADA = "1940-11-18" AND
     # Note que o _TABLE_SUFFIX 
     # entrega valores em STRING 
     _TABLE_SUFFIX BETWEEN "30" AND "40" AND
@@ -66,15 +66,14 @@ ORDER BY
     max DESC
 
 /*
-Duration	
+Duração	
 0.6 sec (68% mais rápida)
 
-Bytes processed	
-12.57 MB (Curiosidade, ele processa mais bytes)
+Bytes processados		
+12.57 MB
 
-Bytes billed	
+Custo estimado
 13 MB (88% mais barato)
-
 */
 
 
